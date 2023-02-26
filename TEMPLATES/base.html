@@ -13,7 +13,7 @@
             max-width: 100%;
             max-height: 100%;
             background-color: #2b2b2b;
-            align-items: center;
+            /* align-items: center; */
             color: #f7f7f7;
         }
 
@@ -26,8 +26,12 @@
         }
 
         #container > div {
+            border: 1px solid white;
+            height: 50px;
+            width: 100px;
            
         }
+
     </style>
 </head>
 
@@ -35,6 +39,11 @@
     <div id="container">
         {% for parkplatz in parkplatzConfig %}
         <div>{{parkplatz.ParkplatzID}}</div>
+        <!-- {% if parkplatz.Status == "besetzt" %} -->
+            style="background-color: red;"
+        {% endif %}>
+        {{parkplatz.ParkplatzID}}
+        </div>
         {% endfor %}
     </div>
 </body>
